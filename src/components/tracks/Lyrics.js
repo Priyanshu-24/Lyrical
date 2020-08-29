@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Axios from 'axios'
 import Spinner from '../layout/Spinner'
 import { Link } from 'react-router-dom'
-import Tracks from './Tracks'
+//import Tracks from './Tracks'
 
 class Lyrics extends Component {
 
@@ -33,7 +33,7 @@ class Lyrics extends Component {
         
 
         const {track,lyrics}=this.state;
-        console.log(track)
+        
          if(track===undefined || lyrics===undefined ||
              Object.keys(track).length===0 || Object.keys(lyrics).length===0 )
              {
@@ -57,17 +57,16 @@ class Lyrics extends Component {
 
                      <ul className="list-group mt-3">
                         <li className="list-group-item">
-                            <strong>Album ID</strong>: {track.album_id}
+                            <strong>Album ID</strong> : {track.album_id}
                         </li>
                         <li className="list-group-item">
-                            <strong>Song Genre</strong>: {track.primary_genres.music_genre_list[0]
-                            .music_genre.music_genre_name}
+                            <strong>Album</strong> : {track.album_name}
                         </li>
                         <li className="list-group-item">
-                           <strong>Explicit Words</strong>: {track.explicit === 0 ?"No":"Yes"}
+                           <strong>Explicit Words</strong> : {track.explicit === 0 ?"No":"Yes"}
                         </li>
                         <li className="list-group-item">
-                           <strong>Release Date</strong>: {track.first_release_date}
+                           <strong>Made Favourite By</strong> : {track.num_favourite } Users
                         </li>
                      </ul>
                  </React.Fragment>

@@ -5,10 +5,11 @@ import { BrowserRouter,Route,Switch} from 'react-router-dom';
 import Index from './components/layout/Index';
 import { Provider } from './context';
 import Lyrics from './components/tracks/Lyrics';
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
-    <Provider>
+    <Provider >
      <BrowserRouter>
       <React.Fragment>
         <Navbar/>
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/lyrics/track/:id" component={Lyrics}/>
           </Switch>
         </div>
+        <Footer/>
       </React.Fragment>
    </BrowserRouter>
    </Provider>
